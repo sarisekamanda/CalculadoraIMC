@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Calculadora IMC</string>
+    <string name="genero">Mulher</string>
+    <string name="idade">Idade:</string>
+    <string name="peso">Peso:</string>
+    <string name="altura">Altura:</string>
+</resources>
