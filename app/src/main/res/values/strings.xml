@@ -4,4 +4,9 @@
     <string name="idade">Idade:</string>
     <string name="peso">Peso:</string>
     <string name="altura">Altura:</string>
+    <string name="atividadefisica">Atividade Física</string>
+    <string name="sedentario">Sedentário</string>
+    <string name="moderado">Moderado</string>
+    <string name="intenso">Intenso</string>
+    <string name="calcular">Calcular</string>
 </resources>
