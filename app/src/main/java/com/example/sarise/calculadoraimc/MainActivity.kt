@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         seekPeso.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
                 override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                    txtSeekPeso.text = progress.toString()+ "kg"
+                    txtSeekPeso.text = progress.toString()+ " kg"
                     peso = seekBar!!.progress.toDouble().toInt()
                 }
                 override fun onStartTrackingTouch(seekBar: SeekBar?) {               }
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         seekAltura.setOnSeekBarChangeListener(object :SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                txtSeekAltura.text = progress.toString() + "cm"
+                txtSeekAltura.text = progress.toString() + " cm"
                 altura = seekBar!!.progress.toDouble()
             }
             override fun onStartTrackingTouch(seekBar: SeekBar?) {            }
@@ -71,19 +71,22 @@ class MainActivity : AppCompatActivity() {
 
         if (calc < 18.5){
             rbSaudavel.rating = 2F
-            textResultado.text = "IMC:" + calc + " Você está abaixo do peso :(  " +  radio.toString()
+            textResultado.text = String.format("IMC: %.2f" + "\nVocê está abaixo do peso :( \n%s", radio.toString(), calc.toString())
         }else{
             if (calc > 18.5 && calc < 24.9){
                 rbSaudavel.rating = 5F
-                textResultado.text = "IMC:" + calc + " Você esta no peso ideal :D   " + radio.toString()
+                textResultado.text = String.format("IMC: %.2f" + "\nVocê esta no peso ideal :D \n%s", radio.toString(), calc.toString())
+
             }else{
                 rbSaudavel.rating = 2F
                 if(calc>25 && calc<29.9){
-                    textResultado.text = "IMC:" + calc + " Você esta Acima do peso :(   "+ radio.toString()
+                    textResultado.text = String.format("IMC: %.2f" + "\nVocê esta Acima do peso :(  \n%s", radio.toString(), calc.toString())
+
                 }else{
                     if(calc>30){
                         rbSaudavel.rating = 1F
-                        textResultado.text = "IMC:" + calc + "Você está Obeso :(   " + radio.toString()
+                        textResultado.text = String.format("IMC: %.2f" + "\nVocê está Obeso :(  \n%s", radio.toString(), calc.toString())
+
                     }
                 }
             }
